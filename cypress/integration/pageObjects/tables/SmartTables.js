@@ -5,11 +5,10 @@ class SmartTables {
     cy.contains("Tables & Data").click();
     cy.contains("Smart Table").click();
 
-    cy.wait(100)
-    cy.get('ngx-header').then(header => {
-        cy.wrap(header).find('nb-icon').first().click({force:true})
-    })
-  
+    cy.wait(100);
+    cy.get("ngx-header").then((header) => {
+      cy.wrap(header).find("nb-icon").first().click({ force: true });
+    });
 
     cy.get("tbody")
       .contains("tr", "John")
@@ -38,12 +37,11 @@ class SmartTables {
   static verifyDeletingPopUpWindow() {
     cy.contains("Tables & Data").click();
     cy.contains("Smart Table").click();
-    cy.wait(100)
+    cy.wait(100);
 
-    cy.get('ngx-header').then(header => {
-        cy.wrap(header).find('nb-icon').first().click({force:true})
-    })
-  
+    cy.get("ngx-header").then((header) => {
+      cy.wrap(header).find("nb-icon").first().click({ force: true });
+    });
 
     const stub = cy.stub();
     cy.on("window:confirm", stub);
@@ -61,12 +59,11 @@ class SmartTables {
   static verifyCancelDelete() {
     cy.contains("Tables & Data").click();
     cy.contains("Smart Table").click();
-    cy.wait(100)
+    cy.wait(100);
 
-    cy.get('ngx-header').then(header => {
-        cy.wrap(header).find('nb-icon').first().click({force:true})
-    })
-  
+    cy.get("ngx-header").then((header) => {
+      cy.wrap(header).find("nb-icon").first().click({ force: true });
+    });
 
     cy.get("tbody tr").first().find(".nb-trash").click({ force: true });
     cy.on("window:confirm", () => false);

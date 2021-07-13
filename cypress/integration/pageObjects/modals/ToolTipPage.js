@@ -4,7 +4,7 @@ class ToolTipPage {
   static verifyToolTipText() {
     cy.contains("Modal & Overlays").click();
     cy.contains("Tooltip").click();
-
+    cy.wait(100);
     cy.get("ngx-header").then((header) => {
       cy.wrap(header).find("nb-icon").first().click({ force: true });
     });
@@ -18,7 +18,7 @@ class ToolTipPage {
       cy.get("nb-tooltip").should(
         "have.css",
         "background-color",
-        "rgb(21, 26, 48)"
+        "rgb(255, 61, 113)"
       );
     });
   }
@@ -26,7 +26,7 @@ class ToolTipPage {
   static verifyToolTipsClickable() {
     cy.contains("Modal & Overlays").click();
     cy.contains("Tooltip").click();
-
+    cy.wait(100);
     cy.get("ngx-header").then((header) => {
       cy.wrap(header).find("nb-icon").first().click({ force: true });
     });
